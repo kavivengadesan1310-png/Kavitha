@@ -1,0 +1,134 @@
+// Function to show the selected section
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Show the selected section
+    document.getElementById(sectionId).classList.add('active');
+}
+
+// Create more floating Disney characters
+function createFloatingCharacters() {
+    const characters = ['🐭', '🦆', '🐕', '🐴', '🐘', '🧞', '🐠', '🐻', '🦊', '🏰'];
+    const container = document.body;
+    
+    for (let i = 0; i < 10; i++) {
+        const character = document.createElement('div');
+        character.className = 'disney-character';
+        character.innerHTML = characters[Math.floor(Math.random() * characters.length)];
+        
+        // Random position
+        const left = Math.random() * 90 + 5;
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 10 + 15;
+        
+        character.style.left = `${left}%`;
+        character.style.top = `${Math.random() * 20}%`;
+        character.style.animationDelay = `${delay}s`;
+        character.style.animationDuration = `${duration}s`;
+        
+        container.appendChild(character);
+    }
+}
+
+// Form submission handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const message = this.querySelector('textarea').value;
+    
+    // Simple validation
+    if (name && email && message) {
+        // Create a magical success message
+        const successMessage = document.createElement('div');
+        successMessage.style.position = 'fixed';
+        successMessage.style.top = '20px';
+        successMessage.style.right = '20px';
+        successMessage.style.backgroundColor = 'var(--disney-blue)';
+        successMessage.style.color = 'white';
+        successMessage.style.padding = '15px 20px';
+        successMessage.style.borderRadius = '10px';
+        successMessage.style.zIndex = '1000';
+        successMessage.style.boxShadow = '0 0 15px var(--disney-pink)';
+        successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Your magical message has been sent!';
+        
+        document.body.appendChild(successMessage);
+        
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+            successMessage.style.opacity = '0';
+            successMessage.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.removeChild(successMessage);
+            }, 500);
+        }, 3000);
+        
+        // Reset the form
+        this.reset();
+    }
+});
+
+// Add scroll animations
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeIn 1s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Initialize when page loads
+window.onload = function() {
+    createFloatingCharacters();
+    initScrollAnimations();
+    
+    // Add click effects
+    document.addEventListener('click', function(e) {
+        const clickEffect = document.createElement('div');
+        clickEffect.className = 'click-effect';
+        clickEffect.style.position = 'fixed';
+        clickEffect.style.width = '20px';
+        clickEffect.style.height = '20px';
+        clickEffect.style.borderRadius = '50%';
+        clickEffect.style.background = 'radial-gradient(circle, var(--disney-gold), transparent)';
+        clickEffect.style.pointerEvents = 'none';
+        clickEffect.style.left = `${e.clientX - 10}px`;
+        clickEffect.style.top = `${e.clientY - 10}px`;
+        clickEffect.style.zIndex = '9999';
+        clickEffect.style.animation = 'clickAnimation 0.5s ease-out forwards';
+        
+        document.body.appendChild(clickEffect);
+        
+        setTimeout(() => {
+            document.body.removeChild(clickEffect);
+        }, 500);
+    });
+};
+
+// Add CSS for click effect
+const clickEffectStyle = document.createElement('style');
+clickEffectStyle.innerHTML = `
+    @keyframes clickAnimation {
+        0% { transform: scale(1); opacity: 0.7; }
+        100% { transform: scale(3); opacity: 0; }
+    }
+`;
+document.head.appendChild(clickEffectStyle);

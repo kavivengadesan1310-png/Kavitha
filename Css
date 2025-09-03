@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --disney-blue: #0066b2;
+    --disney-gold: #ffb81c;
+    --disney-red: #e41f2a;
+    --disney-purple: #8a2be2;
+    --disney-pink: #ff6fff;
+}
+
+body {
+    font-family: 'Itim', cursive;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+    color: #fff;
+    overflow-x: hidden;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    color: var(--disney-gold);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0 0 10px var(--disney-gold); }
+    to { text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0 0 25px var(--disney-gold), 0 0 35px var(--disney-pink); }
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--disney-gold);
+    margin: 20px 0;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: rgba(255, 184, 28, 0.2);
+    border: 2px solid var(--disney-gold);
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Itim', cursive;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--disney-gold);
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Sections */
+.section {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px rgba(255, 184, 28, 0.3);
+    backdrop-filter: blur(10px);
+    display: none;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.active {
+    display: block;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-img {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.profile-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--disney-gold);
+    box-shadow: 0 0 20px var(--disney-pink);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(255, 184, 28, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+    animation: cardEntrance 1s ease;
+}
+
+@keyframes cardEntrance {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    border-color: var(--disney-gold);
+    box-shadow: 0 0 15px var(--disney-pink);
+}
+
+.project-img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    padding: 15px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill {
+    background: rgba(138, 43, 226, 0.2);
+    padding: 15px 25px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: skillPulse 2s infinite;
+}
+
+@keyframes skillPulse {
+    0% { box-shadow: 0 0 5px var(--disney-purple); }
+    50% { box-shadow: 0 0 20px var(--disney-purple); }
+    100% { box-shadow: 0 0 5px var(--disney-purple); }
+}
+
+.skill i {
+    font-size: 2rem;
+    color: var(--disney-gold);
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid var(--disney-blue);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: 'Itim', cursive;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--disney-blue);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Itim', cursive;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--disney-gold);
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 2px solid var(--disney-gold);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: var(--disney-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-10px) rotate(10deg);
+    background: var(--disney-gold);
+    color: black;
+}
+
+/* Disney Characters Animation */
+.disney-character {
+    position: absolute;
+    font-size: 3rem;
+    z-index: 1;
+    opacity: 0.7;
+    animation: disneyFloat 20s linear infinite;
+}
+
+@keyframes disneyFloat {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content, .contact-content {
+        flex-direction: column;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

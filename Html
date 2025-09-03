@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Magic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Disney Characters Floating -->
+    <div class="disney-character" style="top: 10%; left: 5%;">🐭</div>
+    <div class="disney-character" style="top: 20%; right: 8%;">🦁</div>
+    <div class="disney-character" style="top: 40%; left: 7%;">🧞</div>
+    <div class="disney-character" style="top: 60%; right: 10%;">🐠</div>
+    <div class="disney-character" style="top: 80%; left: 8%;">🏰</div>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Magical Portfolio</h1>
+                <p class="tagline">Where Dreams Come True</p>
+            </div>
+        </header>
+
+        <nav>
+            <button class="nav-btn" onclick="showSection('about')">About Me</button>
+            <button class="nav-btn" onclick="showSection('projects')">Projects</button>
+            <button class="nav-btn" onclick="showSection('skills')">Skills</button>
+            <button class="nav-btn" onclick="showSection('contact')">Contact</button>
+        </nav>
+
+        <main>
+            <!-- About Section -->
+            <section id="about" class="section active">
+                <h2>kavitha</h2>
+                <div class="about-content">
+                    <div class="profile-img">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Profile Picture">
+                    </div>
+                    <div class="about-text">
+                        <p>Hello! I'm a passionate creator who loves to bring magic to digital experiences. Inspired by Disney's creativity and innovation, I strive to create work that captures imagination and wonder.</p>
+                        <p>With a background in design and development, I blend technical skills with artistic vision to build engaging, user-friendly applications that tell a story and create emotional connections.</p>
+                        <p>When I'm not coding or designing, you can find me exploring animation, studying storytelling techniques, or enjoying classic Disney films for inspiration!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2>My Magical Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>Enchanted Castle UI</h3>
+                            <p>A magical user interface inspired by Disney castles, with animated elements and fairy-tale aesthetics.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Project 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Character Animation Library</h3>
+                            <p>A JavaScript library for creating smooth, Disney-style animations for web characters.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1596865249304-5ad5c47e38ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Project 3">
+                        </div>
+                        <div class="project-info">
+                            <h3>Magic Kingdom E-commerce</h3>
+                            <p>An online store with a Disney-themed shopping experience, featuring magical interactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2>Magical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>UI/UX Design</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Responsive Design</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-hat-wizard"></i>
+                        <span>Animation</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2>Send a Magical Message</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> email@magicalportfolio.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Imagination Land, Fantasy World</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Magical Message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with <i class="fas fa-magic" style="color: var(--disney-pink);"></i> and <i class="fas fa-heart" style="color: var(--disney-red);"></i></p>
+            <p>© 2023 Magical Portfolio - All rights reserved</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
